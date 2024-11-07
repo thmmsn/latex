@@ -2,6 +2,19 @@
 \usepackage[norsk]{babel}
 \usepackage{filecontents}
 \begin{filecontents}{\jobname}
+@techreport{514.221,
+	author = {{SINTEF Community}},
+	date-modified = {2024-11-07 16:29:40 +0100},
+	edition = {Januar 2020},
+	institution = {{SINTEF Community}},
+	month = {januar},
+	shorttitle = {514.221},
+	title = {Fuktsikring av konstruksjoner mot grunnen},
+	type = {Byggdetaljer},
+	url = {https://www.byggforsk.no/dokument/248/},
+	urldate = {2024-11-07},
+	year = {2020},
+	bdsk-url-1 = {https://online.standard.no/nb/ns-8402-2010}}
 @techreport{ns8402,
 	author = {{Standard Norge}},
 	publisher = {{Standard Norge}},
@@ -128,8 +141,25 @@
 
 \usepackage[style=apa,sortcites=true,backend=biber]{biblatex}
 \DeclareLanguageMapping{norwegian}{norwegian-apa}
-
 \addbibresource{\jobname}
+
+\renewbibmacro*{title}{%
+  \ifboolexpr{
+    test {\iffieldundef{title}}
+    and
+    test {\iffieldundef{subtitle}}
+  }
+    {}
+    {\printtext[title]{%
+       \printfield[titlecase]{title}%
+       \setunit{\subtitlepunct}%
+       \printfield[titlecase]{subtitle}}%
+       \setunit{\addspace}%
+       \printfield[parens]{shorttitle}%
+     \newunit}%
+  \printfield{titleaddon}}
+
+\newcommand*{\titlecite}[1]{\citefield{#1}{title} \parencite{#1}}
 
 \title{APA7: bibstyles}
 \shorttitle{bibstyles}
