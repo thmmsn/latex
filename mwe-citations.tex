@@ -1,0 +1,152 @@
+\documentclass[man,floatsintext]{apa7}
+\usepackage[norsk]{babel}
+\usepackage{filecontents}
+\begin{filecontents}{\jobname}
+@article{myklebust2022,
+	author = {Myklebust, Trond and Holmboe, Morten},
+	date-added = {2024-11-07 15:30:11 +0100},
+	date-modified = {2024-11-07 15:32:32 +0100},
+	howpublished = {Online},
+	journal = {Politih{\o}gskolen},
+	title = {Henvisninger til juridiske arbeider i APA 7th for norske tekster},
+	year = {2022}}
+
+@misc{politiloven1995,
+  author       = "{Politiloven}",
+  title        = "{Lov om politiet (politiloven) 4. august 1995 nr. 53}",
+  year         = 1995,
+  url          = "https://lovdata.no/lov/1995-08-04-53",
+  institution  = "Lovdata",
+  note         = "LOV-1995-08-04-53. Hentet fra Lovdata",
+}
+
+@misc{grunnloven1814,
+  author       = "{Grunnloven}",
+  title        = "{Kongeriket Norges Grunnlov gitt i riksforsamlingen på Eidsvoll den 17. mai 1814, slik den lyder etter senere endringer, senest stortingsvedtak av 14. mai 2020}",
+  year         = 1814,
+  url          = "https://lovdata.no/lov/1814-05-17",
+  institution  = "Lovdata",
+}
+
+@misc{rt1976_1,
+  author       = "{Rt. 1976}",
+  title        = "{Kløfta-dommen}",
+  year         = 1976,
+  note         = "Høyesteretts plenumsavgjørelse publisert i Norsk Retstidende",
+}
+
+@misc{hr2020_184_a,
+  author       = "{HR-2020-184-A}",
+  title        = "{Facebook og hatefulle ytringer}",
+  year         = 2020,
+  url          = "https://www.domstol.no/Enkelt-domstol/hoyesterett/avgjorelser/2020/hoyesterett-straff/hr-2020-184-a/",
+  note         = "Høyesteretts avgjørelse i avdeling",
+}
+
+@misc{le2019_69916,
+  author       = "{LE-2019-69916}",
+  title        = "{Vold mot offentlig tjenestemann}",
+  year         = 2019,
+  institution  = "{Eidsivating lagmannsrett}",
+  note         = "Eidsivating lagmannsretts dom",
+}
+
+@misc{emk1950,
+  author       = "{EMK}",
+  title        = "{Den europeiske menneskerettskonvensjon med protokoller, 4. november 1950}",
+  year         = 1950,
+}
+
+@misc{kotilainen2020,
+  author       = "{Kotilainen mot Finland}",
+  title        = "{Kotilainen and others v. Finland, Application no. 62439/12}",
+  year         = 2020,
+  url          = "http://hudoc.echr.coe.int/eng?i=001-204603",
+  note         = "Avgjørelse fra Den europeiske menneskerettighetsdomstolen",
+}
+
+@misc{arbeidsmiljoloven2005,
+  author       = "{Arbeidsmiljøloven}",
+  title        = "{Lov om arbeidsmiljø, arbeidstid og stillingsvern m.v.}",
+  year         = 2005,
+  number       = "LOV-2005-06-17-62",
+  url          = "https://lovdata.no/lov/2005-06-17-62",
+  institution  = "Lovdata",
+  note         = "Hentet fra Lovdata",
+}
+
+@misc{grunnloven,
+  author       = "{Grunnloven}",
+  title        = "{Kongeriket Norges Grunnlov}",
+  year         = 1814,
+  month        = may,
+  note         = "Revidert i 2020",
+  url          = "https://lovdata.no/dokument/NL/lov/1814-05-17",
+  institution  = "Lovdata",
+}
+
+@misc{forskrift-opptak,
+  author       = "{Forskrift om opptak til høgare utdanning}",
+  title        = "{Forskrift om opptak til høyere utdanning}",
+  year         = 2017,
+  month        = jun,
+  number       = "FOR-2017-01-06-13",
+  note         = "Sist endret 2020-06-25",
+  url          = "https://lovdata.no/dokument/SF/forskrift/2017-01-06-13",
+  institution  = "Lovdata",
+}
+
+@misc{rt2009_1234,
+  author       = "{Norges Høyesterett}",
+  title        = "{Rt-2009-1234: Prinsipiell avgjørelse om arbeidsrett}",
+  year         = 2009,
+  number       = "Rt-2009-1234",
+  note         = "Høyesterettsdom",
+  url          = "https://lovdata.no/dokument/HRET/avgjorelse/rt-2009-1234",
+  institution  = "Lovdata",
+}
+
+\end{filecontents}
+
+\usepackage[style=apa,sortcites=true,backend=biber]{biblatex}
+\DeclareLanguageMapping{norwegian}{norwegian-apa}
+
+\addbibresource{\jobname}
+
+\title{APA7: bibstyles}
+\shorttitle{bibstyles}
+
+\author{Fredrik Thommesen}
+%\course{}
+\authorsaffiliations{...}
+%\professor{Olav Torp}
+%\duedate{8. november 2024}
+
+\abstract{Eksemplene er basert på \textcite{myklebust2022}.}
+
+\leftheader{bibstyles}
+
+\begin{document}
+\maketitle
+
+\parencite[§100]{grunnloven}, \textcite[§100]{grunnloven}
+
+\parencite{grunnloven1814}, \textcite{grunnloven1814}
+
+\parencite{forskrift-opptak}, \textcite{forskrift-opptak}
+
+\parencite{rt2009_1234}, \textcite{rt2009_1234}
+
+\parencite[§13	]{arbeidsmiljoloven2005}, \textcite{arbeidsmiljoloven2005}
+
+\parencite[side 11]{rt1976_1}, \textcite[side 14]{rt1976_1}
+
+\parencite[side 3]{hr2020_184_a}, \textcite[side 8]{hr2020_184_a}
+
+\parencite[side 13]{le2019_69916}, \textcite[kapittel 4]{le2019_69916}
+
+\parencite[kap 3]{kotilainen2020}, \textcite[side 8]{kotilainen2020}
+
+\printbibliography
+
+\end{document}
